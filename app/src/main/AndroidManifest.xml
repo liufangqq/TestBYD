@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.byd.firstcode.kotlin">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".ten.room.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".eleven.PermissionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ten.room.RoomActivity">
+        </activity>
+        <activity android:name=".ten.JetpackActivity"></activity>
+        <activity android:name=".night.XmlActivity" />
+        <activity android:name=".night.WebActivity" />
+        <activity android:name=".eight.ServiceActivity" />
+
+        <service
+            android:name=".eight.MyIntentService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".eight.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".eight.HandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".eight.MusicActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.byd.firstcode.kotlin.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <activity android:name=".eight.CameraActivity" />
+        <activity android:name=".eight.NotifyActivity" />
+
+        <provider
+            android:name=".seven.DatabaseProvider"
+            android:authorities="com.byd.firstcode.kotlin.provider"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".seven.ProviderActivity" />
+        <activity android:name=".six.DataBaseActivity" />
+        <activity android:name=".six.LoginActivity" />
+        <activity android:name=".six.BaseActivity" />
+        <activity android:name=".six.ReceiverActivity" />
+        <activity android:name=".four.recycler.NewsContentActivity" />
+        <activity android:name=".four.recycler.MainFrgActivity" />
+        <activity android:name=".four.recycler.MsgActivity" />
+        <activity android:name=".four.recycler.RecyclerActivity" />
+        <activity android:name=".four.ListMianActivity" />
+        <activity android:name=".four.LayoutActivity" />
+        <activity android:name=".four.ViewActivity" />
+        <activity android:name=".BaseActivity" />
+        <activity
+            android:name=".DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".NormalActivity" />
+        <activity android:name=".ThirdActivity">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                <action android:name="com.byd.firstcode.kotlin.second" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.byd.firstcode.kotlin.category" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleInstance" />
+
+        <receiver
+            android:name=".four.util.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".six.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter android:priority="100">
+                <action android:name="com.byd.firstcode.kotlin.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".six.AnotherBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.byd.firstcode.kotlin.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
